@@ -261,8 +261,35 @@ div[data-testid="stTextInput"] input, div[data-testid="stTextArea"] textarea {bo
 .login-bottom-text{text-align:center;color:#78635d;font-family:Georgia,'Times New Roman',serif;font-style:italic;line-height:1.55;font-size:1rem;padding:.65rem .7rem 0;}
 .login-bottom-text b{display:block;color:#5b4c46;font-style:normal;font-weight:500;margin-top:.25rem;}
 
+
+
+/* ============================================================
+   LOGIN SIMPLE V8
+   ============================================================ */
+.simple-login-shell{max-width:430px;margin:0 auto 1.2rem;}
+.simple-login-card{background:linear-gradient(180deg,#fffdfa 0%,#f8f1e9 100%);border:1px solid rgba(184,154,125,.18);border-radius:34px;box-shadow:0 20px 52px rgba(70,46,35,.10);overflow:hidden;padding:14px 14px 20px;}
+.simple-login-photo{position:relative;height:332px;border-radius:26px;overflow:hidden;background:#e9ddd2;margin-bottom:1rem;}
+.simple-login-photo img{width:100%;height:100%;object-fit:cover;object-position:center 26%;display:block;filter:saturate(.88) brightness(.78);transform:scale(1.025);}
+.simple-login-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,12,11,.20) 0%,rgba(23,15,13,.02) 32%,rgba(255,250,246,.00) 50%,rgba(255,250,246,.46) 72%,rgba(255,250,246,.82) 100%);}
+.simple-login-toprow{position:absolute;left:16px;right:16px;top:14px;display:flex;justify-content:space-between;align-items:center;z-index:2;color:#f6ebdf;}
+.simple-login-menu,.simple-login-miniheart{font-size:1.15rem;line-height:1;opacity:.95;}
+.simple-login-overlay{position:absolute;left:0;right:0;bottom:16px;z-index:2;text-align:center;padding:0 20px;}
+.simple-login-initials{font-family:"Snell Roundhand","Apple Chancery","Brush Script MT","Segoe Script",cursive!important;font-size:clamp(3.3rem,9vw,4.5rem);line-height:.9;color:#fff7f0;text-shadow:0 3px 16px rgba(0,0,0,.22);margin:0;}
+.simple-login-story{font:500 1.1rem/1.1 Georgia,'Times New Roman',serif;color:#b58d4e;margin-top:.2rem;}
+.simple-login-tagline{font-size:.98rem;line-height:1.4;color:#6f5b51;margin-top:.42rem;}
+.simple-login-heart{text-align:center;color:#caa25c;font-size:1.6rem;line-height:1;margin:.25rem 0 .25rem;}
+.simple-login-title{text-align:center;font:500 2.28rem/1.08 Georgia,'Times New Roman',serif;color:#7b613b;margin:.12rem 0 .2rem;}
+.simple-login-sub{text-align:center;color:#84776d;font-size:.96rem;margin-bottom:1rem;}
+.simple-login-inputs{margin:0 auto;max-width:305px;}
+.simple-login-labels{display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:10px;text-align:center;color:#b49f93;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.32rem;margin-bottom:.2rem;}
+.simple-login-shell [data-testid="stTextInput"] input{text-align:center!important;border-radius:12px!important;min-height:52px!important;background:#fffaf5!important;color:#4c3c35!important;border:1px solid rgba(194,174,156,.45)!important;font:500 1.22rem Georgia,serif!important;box-shadow:none!important;}
+.simple-login-shell [data-testid="stTextInput"] input::placeholder{color:transparent!important;}
+.simple-login-shell .stButton>button{border-radius:18px!important;min-height:50px!important;background:linear-gradient(180deg,#e8b4ae,#d99499)!important;border:1px solid rgba(187,131,135,.22)!important;box-shadow:0 10px 24px rgba(181,111,118,.14);font-family:Georgia,'Times New Roman',serif!important;font-weight:600!important;letter-spacing:.02em;}
+.simple-login-bottom{text-align:center;color:#8a776e;font-size:.92rem;line-height:1.55;padding:.9rem .55rem 0;}
+.simple-login-bottom b{color:#6a5850;font-weight:500;}
+
 @media(max-width:760px){
- .login-shell{max-width:100%}.login-card{border-radius:24px;padding:18px 14px 20px}.login-title{font-size:4.1rem}.login-photo-panel{height:230px;border-radius:22px}.login-metrics{grid-template-columns:1fr 1fr;gap:8px}.login-metric{padding:12px 9px}.login-metric-big{font-size:1.35rem}.block-container{padding-left:.85rem;padding-right:.85rem}.hero{padding:34px 18px 30px;border-radius:22px}
+ .simple-login-shell{max-width:100%}.simple-login-card{border-radius:28px;padding:12px 12px 18px}.simple-login-photo{height:315px;border-radius:24px}.simple-login-title{font-size:2.08rem}.simple-login-story{font-size:1.03rem}.simple-login-bottom{font-size:.89rem}.login-shell{max-width:100%}.login-card{border-radius:24px;padding:18px 14px 20px}.login-title{font-size:4.1rem}.login-photo-panel{height:230px;border-radius:22px}.login-metrics{grid-template-columns:1fr 1fr;gap:8px}.login-metric{padding:12px 9px}.login-metric-big{font-size:1.35rem}.block-container{padding-left:.85rem;padding-right:.85rem}.hero{padding:34px 18px 30px;border-radius:22px}
  .metric-shell{grid-template-columns:1fr}.polaroid img{height:260px}.film-frame,.film-frame img{width:160px}.film-frame img{height:200px}
 }
 </style>
@@ -498,65 +525,50 @@ if "reason_selected" not in st.session_state:
     st.session_state.reason_selected = None
 
 if not st.session_state.unlocked:
-    snapshot = relationship_snapshot()
-    login_photo = ASSETS_DIR / "login_inicio_roja.jpg"
+    login_photo = ASSETS_DIR / "login_simple_cover.jpg"
     login_uri = image_uri(login_photo, 1400) if login_photo.exists() else None
 
-    left, center, right = st.columns([1, 1.12, 1])
+    left, center, right = st.columns([1, 1.05, 1])
     with center:
-        st.markdown('<div class="login-shell">', unsafe_allow_html=True)
-        st.markdown('<div class="login-card">', unsafe_allow_html=True)
-        st.markdown('<div class="login-date-top">13 · 03 · 2026</div>', unsafe_allow_html=True)
-        st.markdown(f'<div class="login-title">{INITIALS}</div>', unsafe_allow_html=True)
-        st.markdown('<div class="login-heart">♡</div>', unsafe_allow_html=True)
-        st.markdown('<div class="login-subtitle">Nuestra historia</div>', unsafe_allow_html=True)
+        st.markdown('<div class="simple-login-shell">', unsafe_allow_html=True)
+        st.markdown('<div class="simple-login-card">', unsafe_allow_html=True)
 
         if login_uri:
             st.markdown(
                 f"""
-                <div class="login-photo-panel">
-                  <img src="{login_uri}" alt="Nuestra foto">
-                  <div class="login-photo-caption">
-                    <span class="mini">El día que comenzó lo nuestro</span>
-                    <div class="main">Aquí empezó una de mis historias favoritas contigo, bb ♡</div>
+                <div class="simple-login-photo">
+                  <img src="{login_uri}" alt="S y J">
+                  <div class="simple-login-toprow">
+                    <div class="simple-login-menu">≡</div>
+                    <div class="simple-login-miniheart">♡</div>
+                  </div>
+                  <div class="simple-login-overlay">
+                    <div class="simple-login-initials">{INITIALS}</div>
+                    <div class="simple-login-story">Nuestra historia</div>
+                    <div class="simple-login-tagline">El día que comenzó lo nuestro ♡</div>
                   </div>
                 </div>
                 """,
                 unsafe_allow_html=True,
             )
 
-        st.markdown(
-            f"""
-            <div class="login-metrics">
-              <div class="login-metric">
-                <div class="login-metric-big">{snapshot['months']}m {snapshot['days']}d</div>
-                <div class="login-metric-label">Llevamos {snapshot['months']} meses y {snapshot['days']} días juntos</div>
-              </div>
-              <div class="login-metric">
-                <div class="login-metric-big">{snapshot['total_days']}</div>
-                <div class="login-metric-label">Días de historia juntos ♡</div>
-              </div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+        st.markdown('<div class="simple-login-heart">♡</div>', unsafe_allow_html=True)
+        st.markdown('<div class="simple-login-title">Ingresa nuestra<br>fecha</div>', unsafe_allow_html=True)
+        st.markdown('<div class="simple-login-sub">Ese día cambió todo.</div>', unsafe_allow_html=True)
 
-        st.markdown('<div class="login-instruction">Abre nuestra historia ♡</div>', unsafe_allow_html=True)
-        st.markdown('<div class="login-instruction-sub">Ingresa la fecha en que nos hicimos novios</div>', unsafe_allow_html=True)
-
-        dcol, s1, mcol, s2, ycol = st.columns([1, .12, 1, .12, 1.35], gap="small")
+        st.markdown('<div class="simple-login-inputs">', unsafe_allow_html=True)
+        dcol, mcol, ycol = st.columns([1, 1, 1.15], gap="small")
         with dcol:
-            code_day = st.text_input("Día", placeholder="13", max_chars=2, label_visibility="collapsed", key="login_day")
-        with s1:
-            st.markdown('<div class="login-separator">/</div>', unsafe_allow_html=True)
+            code_day = st.text_input("Día", value="", placeholder="", max_chars=2, label_visibility="collapsed", key="login_day")
         with mcol:
-            code_month = st.text_input("Mes", placeholder="03", max_chars=2, label_visibility="collapsed", key="login_month")
-        with s2:
-            st.markdown('<div class="login-separator">/</div>', unsafe_allow_html=True)
+            code_month = st.text_input("Mes", value="", placeholder="", max_chars=2, label_visibility="collapsed", key="login_month")
         with ycol:
-            code_year = st.text_input("Año", placeholder="2026", max_chars=4, label_visibility="collapsed", key="login_year")
+            code_year = st.text_input("Año", value="", placeholder="", max_chars=4, label_visibility="collapsed", key="login_year")
 
-        if st.button("ABRIR NUESTRA HISTORIA", use_container_width=True):
+        st.markdown('<div class="simple-login-labels"><div>Día</div><div>Mes</div><div>Año</div></div>', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
+
+        if st.button("Comenzar", use_container_width=True):
             code = f"{code_day}{code_month}{code_year}"
             if digits_only(code) == ACCESS_CODE:
                 st.session_state.unlocked = True
@@ -565,9 +577,10 @@ if not st.session_state.unlocked:
                 st.error("Mmm bb… esa no es nuestra fecha 👀♡")
 
         st.markdown(
-            '<div class="login-bottom-text">Cada aventura nos trajo hasta aquí ♡<b>No es solo una fecha. Es el inicio de nuestra historia favorita.</b></div>',
+            '<div class="simple-login-bottom">No es solo una fecha. <b>Es el inicio de nuestra historia favorita.</b></div>',
             unsafe_allow_html=True,
         )
+
         st.markdown('</div></div>', unsafe_allow_html=True)
     st.stop()
 
