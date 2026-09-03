@@ -233,7 +233,122 @@ div[data-testid="stTextInput"] input, div[data-testid="stTextArea"] textarea {bo
 .small {font-size:.82rem;color:#81736b;}
 .center {text-align:center;}
 
+
+/* ==========================================================
+   PORTADA / LOGIN — estilo oscuro tipo invitación
+   ========================================================== */
+.login-logo {
+    text-align:center;
+    color:#f4eadc;
+    padding-top:34px;
+    position:relative;
+    z-index:2;
+}
+.login-initials {
+    font-family:"Snell Roundhand","Segoe Script","Brush Script MT",cursive !important;
+    font-size:clamp(4rem,14vw,6.3rem);
+    font-weight:400;
+    line-height:.95;
+    letter-spacing:.02em;
+    text-shadow:0 4px 22px rgba(0,0,0,.55);
+}
+.login-heart {
+    color:#e9d5b6;
+    font-size:1.25rem;
+    margin:.35rem 0 .25rem;
+}
+.login-story {
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:1.18rem;
+    color:#eee2d3;
+    letter-spacing:.02em;
+}
+.login-spacer {height:205px;}
+.login-label {
+    text-align:center;
+    color:#eee5da;
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:1.02rem;
+    margin-bottom:.25rem;
+    text-shadow:0 2px 10px rgba(0,0,0,.65);
+}
+.login-date-hint {
+    text-align:center;
+    color:rgba(241,231,218,.72);
+    font-size:.73rem;
+    letter-spacing:.18em;
+    margin-bottom:.15rem;
+}
+.login-bottom {
+    text-align:center;
+    color:#efe3d4;
+    font-family:"Snell Roundhand","Segoe Script","Brush Script MT",cursive;
+    font-size:1.45rem;
+    line-height:1.22;
+    padding:30px 16px 34px;
+    text-shadow:0 2px 12px rgba(0,0,0,.75);
+}
+.login-bottom-heart {
+    display:block;
+    margin-top:.4rem;
+    font-family:Georgia,serif;
+    font-size:1.05rem;
+    color:#ead8bb;
+}
+.st-key-sj_login_panel {
+    min-height:790px;
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid rgba(239,220,190,.16);
+    box-shadow:0 28px 70px rgba(0,0,0,.38);
+    padding:0 26px 0 !important;
+    background-size:cover !important;
+    background-position:center center !important;
+    position:relative;
+}
+.st-key-sj_login_panel:before {
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:24px;
+    background:linear-gradient(180deg,rgba(0,0,0,.28) 0%,rgba(0,0,0,.27) 28%,rgba(0,0,0,.48) 57%,rgba(0,0,0,.76) 100%);
+    pointer-events:none;
+    z-index:0;
+}
+.st-key-sj_login_panel > div {position:relative;z-index:1;}
+.st-key-sj_login_panel [data-testid="stTextInput"] input {
+    text-align:center !important;
+    color:#f7eee4 !important;
+    background:rgba(8,8,8,.46) !important;
+    border:1px solid rgba(242,226,207,.42) !important;
+    border-radius:9px !important;
+    min-height:48px !important;
+    font-family:Georgia,'Times New Roman',serif !important;
+    font-size:1.02rem !important;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.18);
+}
+.st-key-sj_login_panel [data-testid="stTextInput"] input::placeholder {color:rgba(247,238,228,.72) !important;}
+.st-key-sj_login_panel .stButton > button {
+    border-radius:8px !important;
+    min-height:49px !important;
+    background:#f0e8df !important;
+    color:#2a231f !important;
+    border:1px solid rgba(255,255,255,.55) !important;
+    font-family:Georgia,'Times New Roman',serif !important;
+    font-weight:600 !important;
+    letter-spacing:.08em !important;
+    box-shadow:0 8px 24px rgba(0,0,0,.22);
+}
+.st-key-sj_login_panel .stButton > button:hover {background:#fff8ef !important;color:#241e1a !important;}
+.st-key-sj_login_panel [data-testid="stAlert"] {background:rgba(70,23,23,.78);color:white;border-radius:10px;}
+.login-separator {text-align:center;color:#eadfce;padding-top:.7rem;font-family:Georgia,serif;}
+
 @media(max-width:760px){
+ .st-key-sj_login_panel{min-height:730px;border-radius:18px;padding:0 18px 0!important;background-position:center center!important}
+ .st-key-sj_login_panel:before{border-radius:18px}
+ .login-spacer{height:175px}
+ .login-initials{font-size:4.7rem}
+ .login-bottom{font-size:1.3rem;padding-top:22px}
  .block-container{padding-left:.85rem;padding-right:.85rem}.hero{padding:34px 18px 30px;border-radius:22px}
  .metric-shell{grid-template-columns:1fr}.polaroid img{height:260px}.film-frame,.film-frame img{width:160px}.film-frame img{height:200px}
 }
@@ -437,34 +552,72 @@ if "reason_selected" not in st.session_state:
     st.session_state.reason_selected = None
 
 if not st.session_state.unlocked:
-    st.markdown(
-        f"""
-        <div class="hero">
-          <div class="hero-kicker">Nuestra historia · 13 marzo 2026</div>
-          <div class="hero-title">{INITIALS}</div>
-          <div class="hero-sub">
-            No es solo una fecha. Es el inicio de nuestra historia favorita.<br>
-            Hay un pequeño mundo aquí dentro que solo {BB} sabe cómo abrir.
-          </div>
-          <div class="hero-heart">♡</div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-    st.write("")
-    c1, c2, c3 = st.columns([1, 1.15, 1])
-    with c2:
-        st.markdown('<div class="paper-card">', unsafe_allow_html=True)
-        st.markdown("<h3 class='center'>Ingresa nuestra fecha ♡</h3><p class='center small'>DD / MM / AAAA</p>", unsafe_allow_html=True)
-        code = st.text_input("Código", placeholder="13 / 03 / 2026", type="password", label_visibility="collapsed")
-        if st.button("Entrar a lo nuestro", use_container_width=True):
-            if digits_only(code) == ACCESS_CODE:
-                st.session_state.unlocked = True
-                st.rerun()
-            else:
-                st.error("Mmm bb… esa no es nuestra fecha 👀♡")
-        st.markdown("<p class='center small'>Pista: el día que empezó nuestro ‘nosotros’.</p></div>", unsafe_allow_html=True)
+    # Portada con una foto real de ustedes. Cambia esta ruta si luego prefieres otra.
+    login_cover = MOMENTS_DIR / "09_vegas" / "cover.jpg"
+    login_uri = image_uri(login_cover, 1500) if login_cover.exists() else None
+
+    if login_uri:
+        st.markdown(
+            f"""
+            <style>
+            .st-key-sj_login_panel {{
+                background-image:url("{login_uri}") !important;
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    outer_left, outer_center, outer_right = st.columns([1, 1.08, 1])
+    with outer_center:
+        with st.container(key="sj_login_panel"):
+            st.markdown(
+                f"""
+                <div class="login-logo">
+                    <div style="font-size:.78rem;letter-spacing:.22em;color:#d9c5a6;margin-bottom:.8rem;">✦ &nbsp; NUESTRA HISTORIA &nbsp; ✦</div>
+                    <div class="login-initials">{INITIALS}</div>
+                    <div class="login-heart">♡</div>
+                    <div class="login-story">Nuestra historia</div>
+                </div>
+                <div class="login-spacer"></div>
+                <div class="login-label">Ingresa nuestra fecha</div>
+                <div class="login-date-hint">DÍA &nbsp;&nbsp; · &nbsp;&nbsp; MES &nbsp;&nbsp; · &nbsp;&nbsp; AÑO</div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            dcol, sep1, mcol, sep2, ycol = st.columns([1, .15, 1, .15, 1.35], gap="small")
+            with dcol:
+                login_day = st.text_input("Día", placeholder="DD", max_chars=2, label_visibility="collapsed", key="login_day")
+            with sep1:
+                st.markdown('<div class="login-separator">/</div>', unsafe_allow_html=True)
+            with mcol:
+                login_month = st.text_input("Mes", placeholder="MM", max_chars=2, label_visibility="collapsed", key="login_month")
+            with sep2:
+                st.markdown('<div class="login-separator">/</div>', unsafe_allow_html=True)
+            with ycol:
+                login_year = st.text_input("Año", placeholder="AAAA", max_chars=4, label_visibility="collapsed", key="login_year")
+
+            if st.button("ENTRAR", use_container_width=True, key="login_enter"):
+                code = f"{login_day}{login_month}{login_year}"
+                if digits_only(code) == ACCESS_CODE:
+                    st.session_state.unlocked = True
+                    st.rerun()
+                else:
+                    st.error("Mmm bb… esa no es nuestra fecha 👀♡")
+
+            st.markdown(
+                """
+                <div class="login-bottom">
+                    Cada aventura<br>nos trajo hasta aquí
+                    <span class="login-bottom-heart">♡</span>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
     st.stop()
+
 
 # ============================================================
 # MAIN APP
