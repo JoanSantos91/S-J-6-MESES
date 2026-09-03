@@ -177,14 +177,13 @@ html, body, [data-testid="stAppViewContainer"] {
 }
 [data-testid="stHeader"] {background:transparent;}
 .block-container {
-  max-width:470px;
-  padding:1rem 1rem 7.4rem;
+  max-width:440px;
+  padding:0.75rem 0.9rem 6.8rem;
   margin:0 auto;
   min-height:100vh;
-  background:rgba(255,250,244,.94);
-  border-left:1px solid rgba(111,82,61,.07);
-  border-right:1px solid rgba(111,82,61,.07);
-  box-shadow:0 0 55px rgba(70,45,30,.08);
+  background:rgba(255,250,244,.97);
+  border-left:1px solid rgba(111,82,61,.06);
+  border-right:1px solid rgba(111,82,61,.06);
 }
 h1,h2,h3 {font-family:Georgia,'Times New Roman',serif!important;}
 
@@ -263,60 +262,122 @@ div[data-testid="stTextInput"] input, div[data-testid="stTextArea"] textarea {bo
 }
 .mobile-page-sub {color:#85756c;font-size:.9rem;line-height:1.5;margin-bottom:1rem;}
 .home-cover {
-  position:relative; overflow:hidden; border-radius:22px; min-height:330px;
-  margin:2px 0 14px; box-shadow:0 15px 32px rgba(69,45,32,.13);
+  position:relative; overflow:hidden; border-radius:20px; height:205px;
+  margin:4px 0 12px; box-shadow:0 10px 24px rgba(69,45,32,.10);
+  background:#191615;
 }
-.home-cover img {width:100%;height:330px;object-fit:cover;object-position:center 35%;display:block;}
+.home-cover img {
+  width:100%; height:205px; object-fit:cover; object-position:center 38%; display:block;
+  filter:brightness(.58) saturate(.72); opacity:.88;
+}
 .home-cover:after {
   content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.10) 45%,rgba(0,0,0,.64));
+  background:linear-gradient(180deg,rgba(16,13,12,.08),rgba(16,13,12,.22) 52%,rgba(16,13,12,.68));
 }
-.home-cover-copy {position:absolute;z-index:2;left:22px;right:22px;bottom:22px;color:#fff7ef;}
-.home-cover-copy .smallcap {font-size:.71rem;letter-spacing:.2em;text-transform:uppercase;color:#e7d2b6;}
+.home-cover-copy {position:absolute;z-index:2;left:18px;right:18px;bottom:16px;color:#fff7ef;}
+.home-cover-copy .smallcap {font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#ead7bd;}
 .home-cover-copy h1 {
-  margin:.22rem 0 .25rem !important;
+  margin:.15rem 0 .15rem !important;
   font-family:"Snell Roundhand","Apple Chancery","URW Chancery L","Segoe Script",cursive !important;
-  font-size:2.7rem !important;font-weight:400 !important;line-height:1 !important;
+  font-size:2.25rem !important;font-weight:400 !important;line-height:1 !important;
 }
-.home-cover-copy p {margin:0;color:#ede1d5;font-size:.88rem;}
+.home-cover-copy p {margin:0;color:#efe5db;font-size:.80rem;line-height:1.35;}
 .compact-note {
-  background:#f4ddd9;border-radius:14px;padding:16px 17px;margin:10px 0 14px;
-  box-shadow:0 8px 20px rgba(81,53,42,.07);color:#5a4740;
+  background:#f4ddd9;border-radius:14px;padding:14px 15px;margin:8px 0 12px;
+  box-shadow:0 6px 16px rgba(81,53,42,.05);color:#5a4740;
 }
-.compact-note-title {font-family:Georgia,serif;font-size:1.08rem;margin-bottom:.35rem;}
+.compact-note-title {font-family:Georgia,serif;font-size:1.04rem;margin-bottom:.3rem;}
 
 .st-key-mobile_bottom_nav {
   position:fixed;
-  left:50%; bottom:10px; transform:translateX(-50%);
-  width:min(448px, calc(100vw - 18px));
+  left:50%;
+  bottom:max(8px, env(safe-area-inset-bottom));
+  transform:translateX(-50%);
+  width:min(424px, calc(100vw - 16px));
   z-index:9999;
-  padding:7px 8px 6px !important;
-  background:rgba(252,247,240,.96);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
+  padding:6px 6px 5px !important;
+  background:rgba(252,247,240,.97);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
   border:1px solid rgba(119,86,66,.13);
-  border-radius:22px;
-  box-shadow:0 12px 34px rgba(55,35,24,.18);
+  border-radius:19px;
+  box-shadow:0 10px 28px rgba(55,35,24,.16);
 }
 .st-key-mobile_bottom_nav [data-testid="stRadio"] > div {gap:0!important;}
 .st-key-mobile_bottom_nav [role="radiogroup"] {
-  display:flex!important; flex-wrap:nowrap!important; overflow-x:auto!important;
-  gap:2px!important; scrollbar-width:none; justify-content:flex-start!important;
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  overflow-x:auto!important;
+  gap:2px!important;
+  scrollbar-width:none;
+  justify-content:flex-start!important;
+  padding:0!important;
 }
 .st-key-mobile_bottom_nav [role="radiogroup"]::-webkit-scrollbar {display:none;}
 .st-key-mobile_bottom_nav [role="radiogroup"] label {
-  flex:0 0 auto!important; min-width:66px; padding:5px 6px!important;
-  border-radius:14px; margin:0!important; justify-content:center!important;
+  flex:0 0 64px!important;
+  min-width:64px!important;
+  padding:6px 4px!important;
+  border-radius:12px;
+  margin:0!important;
+  justify-content:center!important;
 }
 .st-key-mobile_bottom_nav [role="radiogroup"] label > div:first-child {display:none!important;}
 .st-key-mobile_bottom_nav [role="radiogroup"] label p {
-  font-size:.68rem!important; white-space:nowrap; color:#6c5d55!important; text-align:center!important;
+  font-size:.64rem!important;
+  line-height:1.15!important;
+  white-space:nowrap;
+  color:#6c5d55!important;
+  text-align:center!important;
+  margin:0!important;
 }
-.st-key-mobile_bottom_nav [role="radiogroup"] label:has(input:checked) {
-  background:#f0d9d6!important;
+.st-key-mobile_bottom_nav [role="radiogroup"] label:has(input:checked) {background:#f0d9d6!important;}
+.st-key-mobile_bottom_nav [role="radiogroup"] label:has(input:checked) p {color:#9c6667!important;font-weight:700!important;}
+
+
+/* Login v4: estructura estable sin contenedores HTML abiertos */
+.st-key-login_panel {
+  max-width:372px;
+  margin:8px auto 0;
+  padding:14px 16px 20px !important;
+  background:#171412;
+  border-radius:22px;
+  border:1px solid rgba(244,232,217,.12);
+  box-shadow:0 18px 44px rgba(0,0,0,.16);
 }
-.st-key-mobile_bottom_nav [role="radiogroup"] label:has(input:checked) p {
-  color:#9c6667!important;font-weight:700!important;
+.login-photo-box {
+  position:relative;
+  height:215px;
+  border-radius:17px;
+  overflow:hidden;
+  margin-bottom:17px;
+  background:#111;
+}
+.login-photo-box img {
+  width:100%;height:215px;object-fit:cover;object-position:center 34%;display:block;
+  filter:brightness(.48) saturate(.68);opacity:.90;
+}
+.login-photo-box:after {
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.20) 45%,rgba(0,0,0,.62));
+}
+.login-photo-copy {position:absolute;z-index:2;left:12px;right:12px;top:28px;text-align:center;color:#f6ecdf;}
+.login-photo-copy .sj {
+  font-family:"Snell Roundhand","Apple Chancery","URW Chancery L","Segoe Script",cursive;
+  font-size:4.2rem;line-height:.9;font-weight:400;text-shadow:0 3px 14px rgba(0,0,0,.35);
+}
+.login-photo-copy .story {font-family:Georgia,serif;font-size:1rem;margin-top:.2rem;}
+.login-form-title {text-align:center;color:#efe5d9;font-family:Georgia,serif;font-size:1rem;margin:.1rem 0 .1rem;}
+.login-form-hint {text-align:center;color:#ad9e91;font-size:.68rem;letter-spacing:.14em;margin-bottom:.35rem;}
+.login-footer {text-align:center;color:#e7d8c8;font-family:"Snell Roundhand","Apple Chancery","URW Chancery L","Segoe Script",cursive;font-size:1.25rem;line-height:1.15;padding-top:12px;}
+.st-key-login_panel [data-testid="stTextInput"] input {
+  text-align:center!important;background:#211d1a!important;color:#f9f1e8!important;
+  border:1px solid rgba(244,229,211,.24)!important;border-radius:9px!important;min-height:44px!important;
+}
+.st-key-login_panel [data-testid="stTextInput"] input::placeholder {color:#b9aa9d!important;}
+.st-key-login_panel .stButton > button {
+  background:#efe6dc!important;color:#2e2622!important;border-radius:9px!important;
+  border:0!important;min-height:45px!important;font-family:Georgia,serif!important;letter-spacing:.08em!important;
 }
 
 /* Streamlit expander and inputs feel more like mobile cards */
@@ -595,44 +656,33 @@ if "reason_selected" not in st.session_state:
     st.session_state.reason_selected = None
 
 if not st.session_state.unlocked:
-    login_cover = ASSETS_DIR / "login_cover.jpg"
-    login_uri = image_uri(login_cover, 1600) if login_cover.exists() else None
+    login_cover = ASSETS_DIR / "login_cover_v4.jpg"
+    login_uri = image_uri(login_cover, 1200) if login_cover.exists() else None
 
-    _, center, _ = st.columns([1.08, .9, 1.08])
-    with center:
-        st.markdown('<div class="login-shell">', unsafe_allow_html=True)
-        st.markdown('<div class="login-card">', unsafe_allow_html=True)
-
+    with st.container(key="login_panel"):
         if login_uri:
             st.markdown(
-                f'<div class="login-photo"><img src="{login_uri}" alt="S y J"></div>',
+                f"""
+                <div class="login-photo-box">
+                  <img src="{login_uri}" alt="S y J">
+                  <div class="login-photo-copy">
+                    <div class="sj">{INITIALS}</div>
+                    <div style="font-size:1rem;color:#ead7bc">♡</div>
+                    <div class="story">Nuestra historia</div>
+                  </div>
+                </div>
+                """,
                 unsafe_allow_html=True,
             )
+        else:
+            st.markdown(f"<div class='login-form-title' style='font-size:2rem'>{INITIALS} ♡</div>", unsafe_allow_html=True)
 
-        st.markdown(
-            f"""
-            <div class="login-inner">
-              <div class="login-kicker">Nuestra historia</div>
-              <div class="login-title">{INITIALS}</div>
-              <div class="login-heart">♡</div>
-              <div class="login-story">Nuestra historia</div>
-              <div class="login-gap"></div>
-              <div class="login-label">Ingresa nuestra fecha</div>
-              <div class="login-hint">DÍA &nbsp;&nbsp; · &nbsp;&nbsp; MES &nbsp;&nbsp; · &nbsp;&nbsp; AÑO</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-        dcol, scol1, mcol, scol2, ycol = st.columns([1, .13, 1, .13, 1.35], gap="small")
+        st.markdown('<div class="login-form-title">Ingresa nuestra fecha</div><div class="login-form-hint">DÍA · MES · AÑO</div>', unsafe_allow_html=True)
+        dcol, mcol, ycol = st.columns([1, 1, 1.35], gap="small")
         with dcol:
             login_day = st.text_input("Día", placeholder="13", max_chars=2, label_visibility="collapsed", key="login_day")
-        with scol1:
-            st.markdown('<div class="login-sep">/</div>', unsafe_allow_html=True)
         with mcol:
             login_month = st.text_input("Mes", placeholder="03", max_chars=2, label_visibility="collapsed", key="login_month")
-        with scol2:
-            st.markdown('<div class="login-sep">/</div>', unsafe_allow_html=True)
         with ycol:
             login_year = st.text_input("Año", placeholder="2026", max_chars=4, label_visibility="collapsed", key="login_year")
 
@@ -644,11 +694,8 @@ if not st.session_state.unlocked:
             else:
                 st.error("Mmm bb… esa no es nuestra fecha 👀♡")
 
-        st.markdown(
-            "<div class='login-bottom'>Cada aventura<br>nos trajo hasta aquí<span>♡</span></div>",
-            unsafe_allow_html=True,
-        )
-        st.markdown('</div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="login-footer">Cada aventura nos trajo hasta aquí ♡</div>', unsafe_allow_html=True)
+
     st.stop()
 
 # ============================================================
@@ -689,8 +736,8 @@ st.markdown(
 # INICIO
 # ------------------------------------------------------------
 if active_section == "⌂ Inicio":
-    home_cover = MOMENTS_DIR / "09_vegas" / "cover.jpg"
-    home_uri = image_uri(home_cover, 1200) if home_cover.exists() else None
+    home_cover = ASSETS_DIR / "home_cover.jpg"
+    home_uri = image_uri(home_cover, 1000) if home_cover.exists() else None
 
     if home_uri:
         st.markdown(
@@ -699,31 +746,33 @@ if active_section == "⌂ Inicio":
               <img src="{home_uri}" alt="S y J">
               <div class="home-cover-copy">
                 <div class="smallcap">13 · 03 · 2026</div>
-                <h1>Nuestro aniversario ♡</h1>
-                <p>Cada momento contigo va formando nuestra historia, bb.</p>
+                <h1>S & J ♡</h1>
+                <p>Un pedacito de nosotros, bb.</p>
               </div>
             </div>
             """,
             unsafe_allow_html=True,
         )
 
+    st.markdown('<div class="mobile-page-title">Nuestro tiempo ♡</div>', unsafe_allow_html=True)
+    st.markdown('<div class="mobile-page-sub">Lo que llevamos juntos y lo que falta para nuestros 6 meses.</div>', unsafe_allow_html=True)
     live_counter_component()
+
     st.markdown(
-        '<div class="compact-note"><div class="compact-note-title">Para nosotros, cada momento cuenta ♡</div>'
-        'No es solo cuánto tiempo llevamos, sino todo lo que ya hemos vivido juntos.</div>',
+        '<div class="compact-note"><div class="compact-note-title">Cada momento cuenta ♡</div>'
+        'No es solo cuánto tiempo llevamos; es todo lo que ya hemos vivido juntos.</div>',
         unsafe_allow_html=True,
     )
 
-    st.markdown('<div class="section-title">Nuestro rollo fotográfico</div>', unsafe_allow_html=True)
-    st.markdown('<div class="section-sub">Deslízalo: cada cuadro es una salida, un viaje o un momento que ya forma parte de nosotros.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="mobile-page-title" style="font-size:1.45rem">Nuestro rollo fotográfico</div>', unsafe_allow_html=True)
+    st.markdown('<div class="mobile-page-sub">Desliza hacia los lados para recorrer nuestras salidas, viajes y momentos.</div>', unsafe_allow_html=True)
     render_film_roll()
 
     st.markdown(
         f"""
-        <div class="paper-card">
-          <h3 style="margin-top:0">Nuestro pequeño mundo ♡</h3>
-          <p>Fotos, salidas, viajes, lugares y recuerdos que hemos ido guardando.</p>
-          <p class="small">Desliza el rollo y usa la barra inferior para entrar al álbum, mapa, preguntas, razones o carta.</p>
+        <div class="paper-card" style="padding:16px 17px">
+          <div style="font-family:Georgia,serif;font-size:1.05rem;margin-bottom:.35rem">Nuestro pequeño mundo ♡</div>
+          <div class="small">Usa la barra de abajo para entrar al álbum, mapa, preguntas, razones o carta.</div>
         </div>
         """,
         unsafe_allow_html=True,
