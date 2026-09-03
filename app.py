@@ -176,15 +176,7 @@ html, body, [data-testid="stAppViewContainer"] {
     color:var(--ink);
 }
 [data-testid="stHeader"] {background:transparent;}
-.block-container {
-  max-width:440px;
-  padding:0.75rem 0.9rem 6.8rem;
-  margin:0 auto;
-  min-height:100vh;
-  background:rgba(255,250,244,.97);
-  border-left:1px solid rgba(111,82,61,.06);
-  border-right:1px solid rgba(111,82,61,.06);
-}
+.block-container {max-width:1180px;padding-top:1rem;padding-bottom:4rem;}
 h1,h2,h3 {font-family:Georgia,'Times New Roman',serif!important;}
 
 .hero {
@@ -242,220 +234,121 @@ div[data-testid="stTextInput"] input, div[data-testid="stTextArea"] textarea {bo
 .center {text-align:center;}
 
 
-
-
-/* ==========================================================
-   INTERFAZ MÓVIL + NAVEGACIÓN INFERIOR
-   ========================================================== */
-.mobile-topbar {
-  display:flex; align-items:center; justify-content:space-between;
-  padding:3px 2px 10px; color:#5d4a43;
-}
-.mobile-topbar-title {
-  font-family:"Snell Roundhand","Apple Chancery","URW Chancery L","Segoe Script",cursive;
-  font-size:1.65rem; color:#59453f;
-}
-.mobile-topbar-heart {font-size:1.25rem;color:#c98286;}
-.mobile-page-title {
-  font-family:Georgia,'Times New Roman',serif;
-  font-size:1.75rem; color:#3b302c; margin:.2rem 0 .25rem;
-}
-.mobile-page-sub {color:#85756c;font-size:.9rem;line-height:1.5;margin-bottom:1rem;}
-.home-cover {
-  position:relative; overflow:hidden; border-radius:20px; height:205px;
-  margin:4px 0 12px; box-shadow:0 10px 24px rgba(69,45,32,.10);
-  background:#191615;
-}
-.home-cover img {
-  width:100%; height:205px; object-fit:cover; object-position:center 38%; display:block;
-  filter:brightness(.58) saturate(.72); opacity:.88;
-}
-.home-cover:after {
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(16,13,12,.08),rgba(16,13,12,.22) 52%,rgba(16,13,12,.68));
-}
-.home-cover-copy {position:absolute;z-index:2;left:18px;right:18px;bottom:16px;color:#fff7ef;}
-.home-cover-copy .smallcap {font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#ead7bd;}
-.home-cover-copy h1 {
-  margin:.15rem 0 .15rem !important;
-  font-family:"Snell Roundhand","Apple Chancery","URW Chancery L","Segoe Script",cursive !important;
-  font-size:2.25rem !important;font-weight:400 !important;line-height:1 !important;
-}
-.home-cover-copy p {margin:0;color:#efe5db;font-size:.80rem;line-height:1.35;}
-.compact-note {
-  background:#f4ddd9;border-radius:14px;padding:14px 15px;margin:8px 0 12px;
-  box-shadow:0 6px 16px rgba(81,53,42,.05);color:#5a4740;
-}
-.compact-note-title {font-family:Georgia,serif;font-size:1.04rem;margin-bottom:.3rem;}
-
-.st-key-mobile_bottom_nav {
-  position:fixed;
-  left:50%;
-  bottom:max(8px, env(safe-area-inset-bottom));
-  transform:translateX(-50%);
-  width:min(424px, calc(100vw - 16px));
-  z-index:9999;
-  padding:6px 6px 5px !important;
-  background:rgba(252,247,240,.97);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border:1px solid rgba(119,86,66,.13);
-  border-radius:19px;
-  box-shadow:0 10px 28px rgba(55,35,24,.16);
-}
-.st-key-mobile_bottom_nav [data-testid="stRadio"] > div {gap:0!important;}
-.st-key-mobile_bottom_nav [role="radiogroup"] {
-  display:flex!important;
-  flex-wrap:nowrap!important;
-  overflow-x:auto!important;
-  gap:2px!important;
-  scrollbar-width:none;
-  justify-content:flex-start!important;
-  padding:0!important;
-}
-.st-key-mobile_bottom_nav [role="radiogroup"]::-webkit-scrollbar {display:none;}
-.st-key-mobile_bottom_nav [role="radiogroup"] label {
-  flex:0 0 64px!important;
-  min-width:64px!important;
-  padding:6px 4px!important;
-  border-radius:12px;
-  margin:0!important;
-  justify-content:center!important;
-}
-.st-key-mobile_bottom_nav [role="radiogroup"] label > div:first-child {display:none!important;}
-.st-key-mobile_bottom_nav [role="radiogroup"] label p {
-  font-size:.64rem!important;
-  line-height:1.15!important;
-  white-space:nowrap;
-  color:#6c5d55!important;
-  text-align:center!important;
-  margin:0!important;
-}
-.st-key-mobile_bottom_nav [role="radiogroup"] label:has(input:checked) {background:#f0d9d6!important;}
-.st-key-mobile_bottom_nav [role="radiogroup"] label:has(input:checked) p {color:#9c6667!important;font-weight:700!important;}
-
-
-/* Login v4: estructura estable sin contenedores HTML abiertos */
-.st-key-login_panel {
-  max-width:372px;
-  margin:8px auto 0;
-  padding:14px 16px 20px !important;
-  background:#171412;
-  border-radius:22px;
-  border:1px solid rgba(244,232,217,.12);
-  box-shadow:0 18px 44px rgba(0,0,0,.16);
-}
-.login-photo-box {
-  position:relative;
-  height:215px;
-  border-radius:17px;
-  overflow:hidden;
-  margin-bottom:17px;
-  background:#111;
-}
-.login-photo-box img {
-  width:100%;height:215px;object-fit:cover;object-position:center 34%;display:block;
-  filter:brightness(.48) saturate(.68);opacity:.90;
-}
-.login-photo-box:after {
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.20) 45%,rgba(0,0,0,.62));
-}
-.login-photo-copy {position:absolute;z-index:2;left:12px;right:12px;top:28px;text-align:center;color:#f6ecdf;}
-.login-photo-copy .sj {
-  font-family:"Snell Roundhand","Apple Chancery","URW Chancery L","Segoe Script",cursive;
-  font-size:4.2rem;line-height:.9;font-weight:400;text-shadow:0 3px 14px rgba(0,0,0,.35);
-}
-.login-photo-copy .story {font-family:Georgia,serif;font-size:1rem;margin-top:.2rem;}
-.login-form-title {text-align:center;color:#efe5d9;font-family:Georgia,serif;font-size:1rem;margin:.1rem 0 .1rem;}
-.login-form-hint {text-align:center;color:#ad9e91;font-size:.68rem;letter-spacing:.14em;margin-bottom:.35rem;}
-.login-footer {text-align:center;color:#e7d8c8;font-family:"Snell Roundhand","Apple Chancery","URW Chancery L","Segoe Script",cursive;font-size:1.25rem;line-height:1.15;padding-top:12px;}
-.st-key-login_panel [data-testid="stTextInput"] input {
-  text-align:center!important;background:#211d1a!important;color:#f9f1e8!important;
-  border:1px solid rgba(244,229,211,.24)!important;border-radius:9px!important;min-height:44px!important;
-}
-.st-key-login_panel [data-testid="stTextInput"] input::placeholder {color:#b9aa9d!important;}
-.st-key-login_panel .stButton > button {
-  background:#efe6dc!important;color:#2e2622!important;border-radius:9px!important;
-  border:0!important;min-height:45px!important;font-family:Georgia,serif!important;letter-spacing:.08em!important;
-}
-
-/* Streamlit expander and inputs feel more like mobile cards */
-[data-testid="stExpander"] {border-radius:16px!important;border-color:rgba(111,82,61,.10)!important;background:#fffaf5!important;}
-[data-testid="stFileUploader"] {border-radius:16px!important;}
-
 /* ==========================================================
    PORTADA / LOGIN — estilo oscuro tipo invitación
    ========================================================== */
-.login-shell {max-width:372px;margin:10px auto 1rem;}
-.login-card {
-  position:relative; overflow:hidden; min-height:650px; border-radius:24px;
-  box-shadow:0 22px 56px rgba(0,0,0,.18); border:1px solid rgba(244,232,217,.12);
+.login-logo {
+    text-align:center;
+    color:#f4eadc;
+    padding-top:34px;
+    position:relative;
+    z-index:2;
 }
-.login-photo {
-  position:absolute; inset:0; overflow:hidden; border-radius:24px;
+.login-initials {
+    font-family:"Snell Roundhand","Segoe Script","Brush Script MT",cursive !important;
+    font-size:clamp(4rem,14vw,6.3rem);
+    font-weight:400;
+    line-height:.95;
+    letter-spacing:.02em;
+    text-shadow:0 4px 22px rgba(0,0,0,.55);
 }
-.login-photo img {
-  width:100%; height:100%; object-fit:cover; object-position:center 35%;
-  filter:brightness(.26) saturate(.68) blur(.9px); transform:scale(1.04); opacity:.93;
+.login-heart {
+    color:#e9d5b6;
+    font-size:1.25rem;
+    margin:.35rem 0 .25rem;
 }
-.login-photo:after {
-  content:""; position:absolute; inset:0;
-  background:
-    radial-gradient(circle at 50% 14%, rgba(255,245,229,.12), transparent 28%),
-    linear-gradient(180deg, rgba(7,7,7,.14) 0%, rgba(11,11,11,.18) 22%, rgba(10,10,10,.32) 48%, rgba(10,10,10,.72) 78%, rgba(10,10,10,.86) 100%);
-}
-.login-inner {position:relative; z-index:2; padding:40px 26px 28px; color:#f6ecdd;}
-.login-kicker {
-  text-align:center; text-transform:uppercase; letter-spacing:.26em;
-  font-size:.72rem; color:#dcc5a1; margin-bottom:.7rem;
-}
-.login-title {
-  text-align:center;
-  font-family:"Snell Roundhand","Apple Chancery","URW Chancery L","Brush Script MT","Segoe Script",cursive;
-  font-size:clamp(4.1rem,11vw,5.5rem); line-height:.9; font-weight:400;
-  color:#f8efe6; text-shadow:0 4px 18px rgba(0,0,0,.35);
-}
-.login-heart {text-align:center; font-size:1.12rem; color:#ead6b5; margin:.15rem 0 .15rem;}
 .login-story {
-  text-align:center; font-family:Georgia,'Times New Roman',serif; font-size:1.13rem;
-  color:#f0e6da; letter-spacing:.02em;
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:1.18rem;
+    color:#eee2d3;
+    letter-spacing:.02em;
 }
-.login-gap {height:150px;}
+.login-spacer {height:205px;}
 .login-label {
-  text-align:center; font-family:Georgia,'Times New Roman',serif; font-size:1rem;
-  color:#f0e5d8; margin-bottom:.28rem;
+    text-align:center;
+    color:#eee5da;
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:1.02rem;
+    margin-bottom:.25rem;
+    text-shadow:0 2px 10px rgba(0,0,0,.65);
 }
-.login-hint {text-align:center; color:rgba(244,233,220,.66); font-size:.72rem; letter-spacing:.16em; margin-bottom:.25rem;}
-.login-sep {text-align:center; color:#eadfce; padding-top:.6rem; font-family:Georgia,serif;}
+.login-date-hint {
+    text-align:center;
+    color:rgba(241,231,218,.72);
+    font-size:.73rem;
+    letter-spacing:.18em;
+    margin-bottom:.15rem;
+}
 .login-bottom {
-  position:absolute; left:24px; right:24px; bottom:20px; z-index:2; text-align:center;
-  color:#efe2d4; font-family:"Snell Roundhand","Apple Chancery","URW Chancery L","Brush Script MT","Segoe Script",cursive;
-  font-size:1.42rem; line-height:1.18; text-shadow:0 2px 10px rgba(0,0,0,.45);
+    text-align:center;
+    color:#efe3d4;
+    font-family:"Snell Roundhand","Segoe Script","Brush Script MT",cursive;
+    font-size:1.45rem;
+    line-height:1.22;
+    padding:30px 16px 34px;
+    text-shadow:0 2px 12px rgba(0,0,0,.75);
 }
-.login-bottom span {display:block; font-size:1rem; margin-top:.3rem; color:#ead8bb; font-family:Georgia,serif;}
-.login-shell [data-testid="stTextInput"] input {
-  text-align:center !important; min-height:46px !important; border-radius:9px !important;
-  background:rgba(18,18,18,.22) !important; color:#fbf5eb !important;
-  border:1px solid rgba(244,229,211,.35) !important; font-family:Georgia,'Times New Roman',serif !important;
+.login-bottom-heart {
+    display:block;
+    margin-top:.4rem;
+    font-family:Georgia,serif;
+    font-size:1.05rem;
+    color:#ead8bb;
 }
-.login-shell [data-testid="stTextInput"] input::placeholder {color:rgba(251,245,235,.68) !important;}
-.login-shell .stButton > button {
-  width:100%; min-height:47px !important; border-radius:9px !important;
-  background:#f1e8dc !important; color:#2f2723 !important; border:1px solid rgba(255,255,255,.56) !important;
-  font-family:Georgia,'Times New Roman',serif !important; font-weight:600 !important; letter-spacing:.08em !important;
-  box-shadow:0 6px 18px rgba(0,0,0,.18);
+.st-key-sj_login_panel {
+    min-height:790px;
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid rgba(239,220,190,.16);
+    box-shadow:0 28px 70px rgba(0,0,0,.38);
+    padding:0 26px 0 !important;
+    background-size:cover !important;
+    background-position:center center !important;
+    position:relative;
 }
-.login-shell .stButton > button:hover {background:#fbf4ea !important; color:#241e1a !important;}
-.login-shell [data-testid="stAlert"] {background:rgba(70,23,23,.80); color:white; border-radius:10px;}
+.st-key-sj_login_panel:before {
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:24px;
+    background:linear-gradient(180deg,rgba(0,0,0,.28) 0%,rgba(0,0,0,.27) 28%,rgba(0,0,0,.48) 57%,rgba(0,0,0,.76) 100%);
+    pointer-events:none;
+    z-index:0;
+}
+.st-key-sj_login_panel > div {position:relative;z-index:1;}
+.st-key-sj_login_panel [data-testid="stTextInput"] input {
+    text-align:center !important;
+    color:#f7eee4 !important;
+    background:rgba(8,8,8,.46) !important;
+    border:1px solid rgba(242,226,207,.42) !important;
+    border-radius:9px !important;
+    min-height:48px !important;
+    font-family:Georgia,'Times New Roman',serif !important;
+    font-size:1.02rem !important;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.18);
+}
+.st-key-sj_login_panel [data-testid="stTextInput"] input::placeholder {color:rgba(247,238,228,.72) !important;}
+.st-key-sj_login_panel .stButton > button {
+    border-radius:8px !important;
+    min-height:49px !important;
+    background:#f0e8df !important;
+    color:#2a231f !important;
+    border:1px solid rgba(255,255,255,.55) !important;
+    font-family:Georgia,'Times New Roman',serif !important;
+    font-weight:600 !important;
+    letter-spacing:.08em !important;
+    box-shadow:0 8px 24px rgba(0,0,0,.22);
+}
+.st-key-sj_login_panel .stButton > button:hover {background:#fff8ef !important;color:#241e1a !important;}
+.st-key-sj_login_panel [data-testid="stAlert"] {background:rgba(70,23,23,.78);color:white;border-radius:10px;}
+.login-separator {text-align:center;color:#eadfce;padding-top:.7rem;font-family:Georgia,serif;}
 
 @media(max-width:760px){
- .login-shell{max-width:360px}
- .login-card{min-height:630px;border-radius:20px}
- .login-photo,.login-photo img{border-radius:20px}
- .login-gap{height:145px}
- .login-title{font-size:4.25rem}
- .login-bottom{font-size:1.28rem;left:20px;right:20px}
+ .st-key-sj_login_panel{min-height:730px;border-radius:18px;padding:0 18px 0!important;background-position:center center!important}
+ .st-key-sj_login_panel:before{border-radius:18px}
+ .login-spacer{height:175px}
+ .login-initials{font-size:4.7rem}
+ .login-bottom{font-size:1.3rem;padding-top:22px}
  .block-container{padding-left:.85rem;padding-right:.85rem}.hero{padding:34px 18px 30px;border-radius:22px}
  .metric-shell{grid-template-columns:1fr}.polaroid img{height:260px}.film-frame,.film-frame img{width:160px}.film-frame img{height:200px}
 }
@@ -603,14 +496,16 @@ def live_counter_component():
         <div id="metrics" class="metric-shell"></div>
         <style>
           body{margin:0;background:transparent;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#322925}
-          .metric-shell{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:1px 0 5px}
-          .metric-card{box-sizing:border-box;background:linear-gradient(180deg,#fffaf5,#f1e2d7);border:1px solid rgba(216,146,150,.22);border-radius:16px;padding:13px 7px;text-align:center;min-height:102px}
-          .metric-big{font:500 1.65rem/1 Georgia,serif;color:#8c5f58;white-space:nowrap}.metric-label{margin-top:.4rem;color:#756861;font-size:.66rem;line-height:1.25}.metric-mini{margin-top:.35rem;color:#aa7973;font-size:.58rem;line-height:1.3}
+          .metric-shell{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+          .metric-card{box-sizing:border-box;background:linear-gradient(180deg,#fffaf5,#f1e2d7);border:1px solid rgba(216,146,150,.24);border-radius:22px;padding:22px 16px;text-align:center;min-height:145px}
+          .metric-big{font:500 clamp(2.1rem,5vw,3.7rem)/1 Georgia,serif;color:#8c5f58}.metric-label{margin-top:.5rem;color:#756861;font-size:.92rem}.metric-mini{margin-top:.55rem;color:#aa7973;font-size:.82rem}
+          @media(max-width:650px){.metric-shell{grid-template-columns:1fr}.metric-card{min-height:125px}}
         </style>
         <script>
         const start = new Date(2026, 2, 13, 0, 0, 0);
         const target = new Date(2026, 8, 13, 0, 0, 0);
         const dayMs = 86400000;
+
         function calendarParts(now){
           if(now < start) return {months:0, days:0};
           let months=(now.getFullYear()-start.getFullYear())*12+(now.getMonth()-start.getMonth());
@@ -624,24 +519,25 @@ def live_counter_component():
           const daysTogether=Math.max(0,Math.floor((new Date(now.getFullYear(),now.getMonth(),now.getDate())-start)/dayMs));
           const parts=calendarParts(now);
           let diff=target-now;
-          let countMain='♡', countMini='Ya llegamos';
+          let countdown='';
           if(diff>0){
             const d=Math.floor(diff/dayMs); diff-=d*dayMs;
             const h=Math.floor(diff/3600000); diff-=h*3600000;
             const m=Math.floor(diff/60000); diff-=m*60000;
             const s=Math.floor(diff/1000);
-            countMain=`${d}d`;
-            countMini=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+            countdown=`<div class="metric-big">${d}</div><div class="metric-label">días para nuestros 6 meses</div><div class="metric-mini">${String(h).padStart(2,'0')} h · ${String(m).padStart(2,'0')} min · ${String(s).padStart(2,'0')} seg</div>`;
+          } else {
+            countdown=`<div class="metric-big">♡</div><div class="metric-label">Ya cumplimos 6 meses</div><div class="metric-mini">Y lo mejor apenas comienza.</div>`;
           }
           document.getElementById('metrics').innerHTML=`
-            <div class="metric-card"><div class="metric-big">${daysTogether}</div><div class="metric-label">días juntos</div><div class="metric-mini">desde 13/03/26</div></div>
-            <div class="metric-card"><div class="metric-big">${parts.months}m ${parts.days}d</div><div class="metric-label">siendo novios</div><div class="metric-mini">nuestro tiempo ♡</div></div>
-            <div class="metric-card"><div class="metric-big">${countMain}</div><div class="metric-label">para 6 meses</div><div class="metric-mini">${countMini}</div></div>`;
+            <div class="metric-card"><div class="metric-big">${daysTogether}</div><div class="metric-label">días juntos</div><div class="metric-mini">${parts.months} meses y ${parts.days} días siendo novios</div></div>
+            <div class="metric-card"><div class="metric-big">6</div><div class="metric-label">meses</div><div class="metric-mini">13 de septiembre de 2026 ♡</div></div>
+            <div class="metric-card">${countdown}</div>`;
         }
         render(); setInterval(render,1000);
         </script>
         """,
-        height=112,
+        height=178,
         scrolling=False,
     )
 
@@ -656,133 +552,145 @@ if "reason_selected" not in st.session_state:
     st.session_state.reason_selected = None
 
 if not st.session_state.unlocked:
-    login_cover = ASSETS_DIR / "login_cover_v4.jpg"
-    login_uri = image_uri(login_cover, 1200) if login_cover.exists() else None
+    # Portada con una foto real de ustedes. Cambia esta ruta si luego prefieres otra.
+    login_cover = MOMENTS_DIR / "09_vegas" / "cover.jpg"
+    login_uri = image_uri(login_cover, 1500) if login_cover.exists() else None
 
-    with st.container(key="login_panel"):
-        if login_uri:
+    if login_uri:
+        st.markdown(
+            f"""
+            <style>
+            .st-key-sj_login_panel {{
+                background-image:url("{login_uri}") !important;
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    outer_left, outer_center, outer_right = st.columns([1, 1.08, 1])
+    with outer_center:
+        with st.container(key="sj_login_panel"):
             st.markdown(
                 f"""
-                <div class="login-photo-box">
-                  <img src="{login_uri}" alt="S y J">
-                  <div class="login-photo-copy">
-                    <div class="sj">{INITIALS}</div>
-                    <div style="font-size:1rem;color:#ead7bc">♡</div>
-                    <div class="story">Nuestra historia</div>
-                  </div>
+                <div class="login-logo">
+                    <div style="font-size:.78rem;letter-spacing:.22em;color:#d9c5a6;margin-bottom:.8rem;">✦ &nbsp; NUESTRA HISTORIA &nbsp; ✦</div>
+                    <div class="login-initials">{INITIALS}</div>
+                    <div class="login-heart">♡</div>
+                    <div class="login-story">Nuestra historia</div>
+                </div>
+                <div class="login-spacer"></div>
+                <div class="login-label">Ingresa nuestra fecha</div>
+                <div class="login-date-hint">DÍA &nbsp;&nbsp; · &nbsp;&nbsp; MES &nbsp;&nbsp; · &nbsp;&nbsp; AÑO</div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            dcol, sep1, mcol, sep2, ycol = st.columns([1, .15, 1, .15, 1.35], gap="small")
+            with dcol:
+                login_day = st.text_input("Día", placeholder="DD", max_chars=2, label_visibility="collapsed", key="login_day")
+            with sep1:
+                st.markdown('<div class="login-separator">/</div>', unsafe_allow_html=True)
+            with mcol:
+                login_month = st.text_input("Mes", placeholder="MM", max_chars=2, label_visibility="collapsed", key="login_month")
+            with sep2:
+                st.markdown('<div class="login-separator">/</div>', unsafe_allow_html=True)
+            with ycol:
+                login_year = st.text_input("Año", placeholder="AAAA", max_chars=4, label_visibility="collapsed", key="login_year")
+
+            if st.button("ENTRAR", use_container_width=True, key="login_enter"):
+                code = f"{login_day}{login_month}{login_year}"
+                if digits_only(code) == ACCESS_CODE:
+                    st.session_state.unlocked = True
+                    st.rerun()
+                else:
+                    st.error("Mmm bb… esa no es nuestra fecha 👀♡")
+
+            st.markdown(
+                """
+                <div class="login-bottom">
+                    Cada aventura<br>nos trajo hasta aquí
+                    <span class="login-bottom-heart">♡</span>
                 </div>
                 """,
                 unsafe_allow_html=True,
             )
-        else:
-            st.markdown(f"<div class='login-form-title' style='font-size:2rem'>{INITIALS} ♡</div>", unsafe_allow_html=True)
-
-        st.markdown('<div class="login-form-title">Ingresa nuestra fecha</div><div class="login-form-hint">DÍA · MES · AÑO</div>', unsafe_allow_html=True)
-        dcol, mcol, ycol = st.columns([1, 1, 1.35], gap="small")
-        with dcol:
-            login_day = st.text_input("Día", placeholder="13", max_chars=2, label_visibility="collapsed", key="login_day")
-        with mcol:
-            login_month = st.text_input("Mes", placeholder="03", max_chars=2, label_visibility="collapsed", key="login_month")
-        with ycol:
-            login_year = st.text_input("Año", placeholder="2026", max_chars=4, label_visibility="collapsed", key="login_year")
-
-        if st.button("ENTRAR", use_container_width=True, key="login_enter"):
-            code = f"{login_day}{login_month}{login_year}"
-            if digits_only(code) == ACCESS_CODE:
-                st.session_state.unlocked = True
-                st.rerun()
-            else:
-                st.error("Mmm bb… esa no es nuestra fecha 👀♡")
-
-        st.markdown('<div class="login-footer">Cada aventura nos trajo hasta aquí ♡</div>', unsafe_allow_html=True)
 
     st.stop()
+
 
 # ============================================================
 # MAIN APP
 # ============================================================
 
-# Navegación estilo app móvil. La barra queda fija en la parte inferior
-# y se puede deslizar horizontalmente cuando la pantalla es pequeña.
-NAV_OPTIONS = [
-    "⌂ Inicio",
-    "▣ Álbum",
-    "⌖ Mapa",
-    "? Preguntas",
-    "♡ Razones",
-    "✉ Carta",
-]
-
-with st.container(key="mobile_bottom_nav"):
-    active_section = st.radio(
-        "Navegación",
-        NAV_OPTIONS,
-        horizontal=True,
-        label_visibility="collapsed",
-        key="app_section",
-    )
-
 st.markdown(
     f"""
-    <div class="mobile-topbar">
-      <div class="mobile-topbar-title">S & J</div>
-      <div class="mobile-topbar-heart">♡</div>
+    <div class="hero">
+      <div class="hero-kicker">Nuestro lugar favorito: juntos</div>
+      <div class="hero-title">{INITIALS}</div>
+      <div class="hero-sub">
+        Hola {BB} ♡ Este es nuestro álbum, nuestro mapa y un pedacito de todo lo que hemos vivido desde el 13 de marzo.
+      </div>
+      <div class="hero-heart">♡</div>
     </div>
     """,
     unsafe_allow_html=True,
 )
 
+live_counter_component()
+
+st.markdown('<div class="quote-strip">“No es la cantidad de tiempo, es todo lo que hemos vivido juntos.” ♡</div>', unsafe_allow_html=True)
+
+tabs = st.tabs([
+    "♡ Inicio",
+    "🎞 Álbum",
+    "📍 Mapa",
+    "💬 5 preguntas",
+    "♥ 10 razones",
+    "✉ Para ti",
+])
+
 # ------------------------------------------------------------
 # INICIO
 # ------------------------------------------------------------
-if active_section == "⌂ Inicio":
-    home_cover = ASSETS_DIR / "home_cover.jpg"
-    home_uri = image_uri(home_cover, 1000) if home_cover.exists() else None
+with tabs[0]:
+    st.markdown('<div class="section-title">Nuestro rollo fotográfico</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-sub">Deslízalo: cada cuadro es una salida, un viaje o un momento que ya forma parte de nosotros.</div>', unsafe_allow_html=True)
+    render_film_roll()
 
-    if home_uri:
+    left, right = st.columns([1.05, .95])
+    with left:
         st.markdown(
             f"""
-            <div class="home-cover">
-              <img src="{home_uri}" alt="S y J">
-              <div class="home-cover-copy">
-                <div class="smallcap">13 · 03 · 2026</div>
-                <h1>S & J ♡</h1>
-                <p>Un pedacito de nosotros, bb.</p>
-              </div>
+            <div class="scrap-note">
+              <h3>Para nosotros, cada momento cuenta ♡</h3>
+              <p>No quise hacerte solamente una tarjeta, {BB}. Quise hacer un lugar al que puedas volver, mirar nuestras fotos y recordar todo lo que hemos ido construyendo.</p>
+              <p>Hay salidas grandes, viajes, noches especiales y también momentos simples. Para mí todos cuentan porque los viví contigo.</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+    with right:
+        st.markdown(
+            """
+            <div class="paper-card">
+              <h3 style="margin-top:0">Lo que ya vive aquí</h3>
+              <p>♡ 10 recuerdos organizados por lugar o salida.</p>
+              <p>♡ Fotos estilo Polaroid y videos de nuestras aventuras.</p>
+              <p>♡ Un mapa de los lugares públicos que hemos visitado.</p>
+              <p>♡ 5 preguntas para ver nuestra historia desde tus ojos.</p>
+              <p>♡ 10 razones escondidas para descubrir una por una.</p>
+              <p>♡ Y un espacio para que tú también agregues tus fotos favoritas.</p>
             </div>
             """,
             unsafe_allow_html=True,
         )
 
-    st.markdown('<div class="mobile-page-title">Nuestro tiempo ♡</div>', unsafe_allow_html=True)
-    st.markdown('<div class="mobile-page-sub">Lo que llevamos juntos y lo que falta para nuestros 6 meses.</div>', unsafe_allow_html=True)
-    live_counter_component()
-
-    st.markdown(
-        '<div class="compact-note"><div class="compact-note-title">Cada momento cuenta ♡</div>'
-        'No es solo cuánto tiempo llevamos; es todo lo que ya hemos vivido juntos.</div>',
-        unsafe_allow_html=True,
-    )
-
-    st.markdown('<div class="mobile-page-title" style="font-size:1.45rem">Nuestro rollo fotográfico</div>', unsafe_allow_html=True)
-    st.markdown('<div class="mobile-page-sub">Desliza hacia los lados para recorrer nuestras salidas, viajes y momentos.</div>', unsafe_allow_html=True)
-    render_film_roll()
-
-    st.markdown(
-        f"""
-        <div class="paper-card" style="padding:16px 17px">
-          <div style="font-family:Georgia,serif;font-size:1.05rem;margin-bottom:.35rem">Nuestro pequeño mundo ♡</div>
-          <div class="small">Usa la barra de abajo para entrar al álbum, mapa, preguntas, razones o carta.</div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
 # ------------------------------------------------------------
 # ALBUM
 # ------------------------------------------------------------
-if active_section == "▣ Álbum":
-    st.markdown('<div class="mobile-page-title">Nuestro álbum ♡</div>', unsafe_allow_html=True)
+with tabs[1]:
+    st.markdown('<div class="section-title">Nuestro álbum ♡</div>', unsafe_allow_html=True)
     st.markdown('<div class="section-sub">Cada lugar tiene su propia pequeña historia. Abre los recuerdos y recórrelos a tu ritmo.</div>', unsafe_allow_html=True)
 
     # Mini navegación por recuerdo
@@ -862,8 +770,8 @@ if active_section == "▣ Álbum":
 # ------------------------------------------------------------
 # MAPA
 # ------------------------------------------------------------
-if active_section == "⌖ Mapa":
-    st.markdown('<div class="mobile-page-title">Nuestro mapa ♡</div>', unsafe_allow_html=True)
+with tabs[2]:
+    st.markdown('<div class="section-title">Nuestro mapa de recuerdos 📍</div>', unsafe_allow_html=True)
     st.markdown('<div class="section-sub">Cada punto es una historia que ya podemos volver a visitar. Los lugares privados no aparecen por ubicación.</div>', unsafe_allow_html=True)
 
     mapped = [m for m in MOMENTS if m.get("coords")]
@@ -897,8 +805,8 @@ if active_section == "⌖ Mapa":
 # ------------------------------------------------------------
 # 5 PREGUNTAS
 # ------------------------------------------------------------
-if active_section == "? Preguntas":
-    st.markdown(f'<div class="mobile-page-title">5 preguntas para ti, {BB} ♡</div>', unsafe_allow_html=True)
+with tabs[3]:
+    st.markdown(f'<div class="section-title">5 preguntas para ti, {BB} ♡</div>', unsafe_allow_html=True)
     st.markdown('<div class="section-sub">No es un examen. Solo quiero saber cómo se ve nuestra historia desde tus ojos.</div>', unsafe_allow_html=True)
 
     saved_answers = read_json(ANSWERS_DB, {})
@@ -926,8 +834,8 @@ if active_section == "? Preguntas":
 # ------------------------------------------------------------
 # 10 RAZONES
 # ------------------------------------------------------------
-if active_section == "♡ Razones":
-    st.markdown('<div class="mobile-page-title">10 razones por las que amo estar contigo ♡</div>', unsafe_allow_html=True)
+with tabs[4]:
+    st.markdown('<div class="section-title">10 razones por las que amo estar contigo ♡</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="section-sub">Toca un corazón, {BB}. No quiero que las leas todas de golpe.</div>', unsafe_allow_html=True)
 
     cols = st.columns(5)
@@ -953,8 +861,8 @@ if active_section == "♡ Razones":
 # ------------------------------------------------------------
 # CARTA
 # ------------------------------------------------------------
-if active_section == "✉ Carta":
-    st.markdown(f'<div class="mobile-page-title">Para ti, {BB} ♡</div>', unsafe_allow_html=True)
+with tabs[5]:
+    st.markdown(f'<div class="section-title">Para ti, {BB} ♡</div>', unsafe_allow_html=True)
     st.markdown('<div class="section-sub">Una última página antes de seguir escribiendo las siguientes.</div>', unsafe_allow_html=True)
 
     st.markdown(
@@ -982,3 +890,4 @@ if active_section == "✉ Carta":
         unsafe_allow_html=True,
     )
 
+st.markdown('<div class="quote-strip">“Cada salida nos trajo hasta aquí.” · S & J ♡</div>', unsafe_allow_html=True)
